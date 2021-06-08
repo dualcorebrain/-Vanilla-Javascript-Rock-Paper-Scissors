@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: black;    
+    height: 100vh;
+}
+
+#button-container{
+    position: relative;
+    top: 45%;
+    left: 20%;
+
+    height: 15%;
+    width: 20%;
+
+    display: flex;
+}
+/*
+.btn{
+
+
+    margin-left: 5%;
+    margin-right: 5%;
+    
+    height: 100%;
+    width: 70%;
+
+    border-radius: 15px;
+
+    background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);    
+    
+    text-decoration: none;
+    font-weight: 800;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.btn:hover{
+    border: 3px solid black;
+    box-shadow: 0px 0px 50px 5px rgb(140, 0, 255);
+}
+*/
+.btn {
+background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%)
+}
+
+.btn {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.2s;
+    background-size: 200% auto;
+    color: white;   
+
+    box-shadow: 0 0 5px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+    border: 3px solid black;
+    box-shadow: 0px 0px 50px 5px rgb(140, 0, 255);
+}
+
+
+
+ /*IMAGES*/
+
+#hover-images-container{
+    position: relative;
+
+    top: 20%;
+    left: 21%;
+
+
+}
+
+.images{
+     visibility: hidden;
+}
+
+#rock:hover{
+    visibility: visible;
+}
