@@ -1,6 +1,5 @@
 
 // game(); 
-
 window.addEventListener('click', game);
 
 function game(e){
@@ -11,38 +10,38 @@ function game(e){
   let computerScore = 0;
 
 
+
   let playerChoice = playerPlay(e);
   let computerChoice = computerPlay();
 
   
-  console.log("You Chose: " + playerChoice + " Computer Chose: " +computerChoice + "| | The Current score is: Player- " + playerScore + " Computer- " + computerScore)
+  for(let looper = 0; looper<5; looper++){
+    let roundResult = gameRound(playerChoice, computerChoice);
+    console.log(roundResult);
 
-  let roundResult = gameRound(playerChoice, computerChoice);
-  console.log(roundResult);
-
-  if(roundResult == "YOU WIN"){
+    if(roundResult == "YOU WIN"){
       playerScore++;
-  }
-  else{
+    }
+    else{
       computerScore++;
-  }
+    }
+
+    console.log("You Chose: " + playerChoice + " Computer Chose: " +computerChoice + "| | The Current score is: Player- " + playerScore + " Computer- " + computerScore);
 
 
-  if(playerScore > computerScore){
+    if(playerScore > computerScore){
       console.log("You win the game!");
-  }
-  else{
+    }
+    else{
       console.log("You lose the game!");
+    }
   }
 }
 
 
-
 function playerPlay(e){
-  // use prompt to get user Input
-  // Make sure its rock or paper or a scissor and nothing else
-  // prompt always returns a String, check how to see if its a number
-  // check if blank value is entered
+  // get user Input
+  // rock or paper or a scissor and nothing else
   
 //Animations
   let buttonClicked = e.target.id;
@@ -52,14 +51,11 @@ function playerPlay(e){
   //let userInputNumber = parseInt(userInput);
 
   userInputUpperCase = buttonClicked.toUpperCase();
-  if(userInputUpperCase === "ROCK" || userInputUpperCase === "PAPER" || userInputUpperCase === "SCISSOR"){
-      return userInputUpperCase;
-  }else{
-      window.alert("Please enter only 'ROCK' 'PAPER' SCISSOR'!");
-      playerPlay(); //restarts this function
-  }
 
-  }
+  return userInputUpperCase;
+
+
+}
 
 
 function computerPlay(){
