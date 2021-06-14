@@ -1,18 +1,46 @@
-window.addEventListener('click', game);
+//window.addEventListener('click', game);
 
 //document.getElementById("rock").addEventListener("click", game);
 
+
 //game(); 
+let playerScore = 0;
+let computerScore = 0;
+
+
+
+  document.getElementById("rock").addEventListener("click", function(e){
+    if(playerScore >=5 || computerScore >=5){
+      return;
+    }
+    else{
+      game(e);
+    }
+});
+
+document.getElementById("paper").addEventListener("click", function(e){
+  if(playerScore >=5 || computerScore >=5){
+    return;
+  }
+  else{
+    game(e);
+  }
+});
+
+document.getElementById("scissor").addEventListener("click", function(e){
+  if(playerScore >=5 || computerScore >=5){
+    return;
+  }
+  else{
+    game(e);
+  }
+});
 
 function game(e){
   //play 5 rounds
   //keep scores
 
-  let playerScore = 0;
-  let computerScore = 0;
-  
 
-  for(let looper = 0; looper<5; looper++){
     let playerChoice = playerPlay(e);
     let computerChoice = computerPlay();
   
@@ -27,7 +55,7 @@ function game(e){
     }
 
     console.log("You Chose: " + playerChoice + " Computer Chose: " + computerChoice + "| | The Current score is: Player- " + playerScore + " Computer- " + computerScore);
-  }
+  
 
   if(playerScore > computerScore){
     console.log("You win the game!");
