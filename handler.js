@@ -1,6 +1,8 @@
-
-// game(); 
 window.addEventListener('click', game);
+
+//document.getElementById("rock").addEventListener("click", game);
+
+//game(); 
 
 function game(e){
   //play 5 rounds
@@ -8,14 +10,12 @@ function game(e){
 
   let playerScore = 0;
   let computerScore = 0;
-
-
-
-  let playerChoice = playerPlay(e);
-  let computerChoice = computerPlay();
-
   
+
   for(let looper = 0; looper<5; looper++){
+    let playerChoice = playerPlay(e);
+    let computerChoice = computerPlay();
+  
     let roundResult = gameRound(playerChoice, computerChoice);
     console.log(roundResult);
 
@@ -26,17 +26,18 @@ function game(e){
       computerScore++;
     }
 
-    console.log("You Chose: " + playerChoice + " Computer Chose: " +computerChoice + "| | The Current score is: Player- " + playerScore + " Computer- " + computerScore);
+    console.log("You Chose: " + playerChoice + " Computer Chose: " + computerChoice + "| | The Current score is: Player- " + playerScore + " Computer- " + computerScore);
+  }
 
-
-    if(playerScore > computerScore){
-      console.log("You win the game!");
-    }
-    else{
-      console.log("You lose the game!");
-    }
+  if(playerScore > computerScore){
+    console.log("You win the game!");
+  }
+  else{
+    console.log("You lose the game!");
   }
 }
+
+
 
 
 function playerPlay(e){
