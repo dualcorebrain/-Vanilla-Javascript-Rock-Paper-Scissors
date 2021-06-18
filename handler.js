@@ -6,11 +6,11 @@
 //game(); 
 let playerScore = 0;
 let computerScore = 0;
-
+let currentRound = 0;
 
 
   document.getElementById("rock").addEventListener("click", function(e){
-    if(playerScore >=5 || computerScore >=5){
+    if(playerScore >=5 || computerScore >=5 || currentRound >= 5){
       return;
     }
     else{
@@ -19,7 +19,7 @@ let computerScore = 0;
 });
 
 document.getElementById("paper").addEventListener("click", function(e){
-  if(playerScore >=5 || computerScore >=5){
+  if(playerScore >=5 || computerScore >=5 || currentRound >= 5){
     return;
   }
   else{
@@ -28,7 +28,7 @@ document.getElementById("paper").addEventListener("click", function(e){
 });
 
 document.getElementById("scissor").addEventListener("click", function(e){
-  if(playerScore >=5 || computerScore >=5){
+  if(playerScore >=5 || computerScore >=5 || currentRound >= 5){
     return;
   }
   else{
@@ -56,13 +56,16 @@ function game(e){
 
     console.log("You Chose: " + playerChoice + " Computer Chose: " + computerChoice + "| | The Current score is: Player- " + playerScore + " Computer- " + computerScore);
   
-
-  if(playerScore > computerScore){
-    console.log("You win the game!");
+  
+  if(currentRound == 4){
+    if(playerScore > computerScore){
+      console.log("You win the game!");
+    }
+    else{
+      console.log("You lose the game!");
+    }
   }
-  else{
-    console.log("You lose the game!");
-  }
+  currentRound++;
 }
 
 
