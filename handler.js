@@ -40,32 +40,33 @@ function game(e){
   //play 5 rounds
   //keep scores
 
+  console.log(e.target[id]);
 
-    let playerChoice = playerPlay(e);
-    let computerChoice = computerPlay();
-  
-    let roundResult = gameRound(playerChoice, computerChoice);
-    console.log(roundResult);
+  let playerChoice = playerPlay(e);
+  let computerChoice = computerPlay();
 
-    if(roundResult == "YOU WIN"){
-      playerScore++;
-    }
-    else{
-      computerScore++;
-    }
+  let roundResult = gameRound(playerChoice, computerChoice);
+  console.log(roundResult);
 
-    console.log("You Chose: " + playerChoice + " Computer Chose: " + computerChoice + "| | The Current score is: Player- " + playerScore + " Computer- " + computerScore);
-  
-  
-  if(currentRound == 4){
-    if(playerScore > computerScore){
-      console.log("You win the game!");
-    }
-    else{
-      console.log("You lose the game!");
-    }
+  if(roundResult == "YOU WIN"){
+    playerScore++;
   }
-  currentRound++;
+  else{
+    computerScore++;
+  }
+
+  console.log("You Chose: " + playerChoice + " Computer Chose: " + computerChoice + "| | The Current score is: Player- " + playerScore + " Computer- " + computerScore);
+
+
+if(currentRound == 4){
+  if(playerScore > computerScore){
+    console.log("You win the game!");
+  }
+  else{
+    console.log("You lose the game!");
+  }
+}
+currentRound++;
 }
 
 
