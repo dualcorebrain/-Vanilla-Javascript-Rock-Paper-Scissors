@@ -102,9 +102,38 @@ h2{
 }
 
 
-/*RESULTS*/
+/*COMPUTER CHOICES IMAGE DISPLAY*/
+
+#player-choice-container{
+    height: 700px;
+    width: 150px;
+    
+    position: relative;
+
+    
+    left: 60%;
+    bottom: 20%;
+}
+
+
+#computer-choice-container{
+    height: 700px;
+    width: 150px;
+    
+    position: relative;
+
+    
+    left: 70%;
+    bottom: 96%;
+}
+
+
+/*ROUND RESULTS*/
 #result-container{
     position: relative;
     top: 40%;
-    left: 10%                                                                                                                                                               ;
+    left: 10%;
+    max-width: max-content;                                                                                                                                                          ;
 }
+
+

@@ -9,7 +9,6 @@ let computerScore = 0;
 let currentRound = 0;
 
 let logging = document.getElementsByClassName("btn");
-console.log(logging);
 
 
 //BUTTON/IMAGE HOVER EFFECTS
@@ -87,10 +86,10 @@ function game(e){
     computerScore++;
   }
 
-  let consoleResult = "You Chose: " + playerChoice + " Computer Chose: " + computerChoice + "| | The Current score is: Player- " + playerScore + " Computer- " + computerScore;
-  console.log(consoleResult);
+  let consoleResult = "Player: " + playerChoice + " | Computer: " + computerChoice + " |  Current scores: Player = " + playerScore + " Computer = " + computerScore;
 
   roundResultsAppender(consoleResult);
+  roundImagesAppender(playerChoice, computerChoice);
 
   if(currentRound == 4){
     if(playerScore > computerScore){
@@ -120,44 +119,24 @@ function playerPlay(e){
   userInputUpperCase = buttonClicked.toUpperCase();
 
   return userInputUpperCase;
-
-
 }
 
-function roundResultsAppender(consoleResult){
-    
-  let resultElement = document.createElement("h2");
-  let resultElementText = document.createTextNode(`${consoleResult}`);
-
-  resultElement.appendChild(resultElementText);
-
-  document.getElementById("result-container").appendChild(resultElement);
-
-  if(currentRound == 4){
-    document.getElementById("result-container").removeChild([0]);
-  }
-  return;
-}
-
-function removeRoundResults(){
-
-}
 
 function computerPlay(){
-//return randomly generated rock/paper/scissor   
-
-  let randomNumber = Math.floor(Math.random() * 3);
+  //return randomly generated rock/paper/scissor   
   
-  if(randomNumber == 0){
-      return "ROCK";
+    let randomNumber = Math.floor(Math.random() * 3);
+    
+    if(randomNumber == 0){
+        return "ROCK";
+    }
+    else if(randomNumber == 1){
+        return "PAPER";
+    }
+    else if(randomNumber == 2){
+        return "SCISSOR";
+    }
   }
-  else if(randomNumber == 1){
-      return "PAPER";
-  }
-  else if(randomNumber == 2){
-      return "SCISSOR";
-  }
-}
 
 
 
@@ -198,3 +177,64 @@ function gameRound(playerSelection, computerSelection){
   }
 
 
+  function roundResultsAppender(consoleResult){
+    
+    let resultElement = document.createElement("h2");
+    let resultElementText = document.createTextNode(`${consoleResult}`);
+  
+    resultElement.appendChild(resultElementText);
+  
+    document.getElementById("result-container").appendChild(resultElement);
+  
+  
+    /*if(currentRound == 4){
+      document.getElementById("result-container").removeChild([0]);
+    }
+    */
+    
+  }
+  
+  function removeRoundResults(){
+  
+  }
+  
+  function roundImagesAppender(playerChoice, computerChoice){
+    if(playerChoice == "ROCK"){
+      let playerChoiceImg = document.createElement("img");
+      playerChoiceImg.src = "images/rock-100x100.png";
+      document.getElementById("player-choice-container").appendChild(playerChoiceImg);
+    }
+  
+    if(computerChoice == "ROCK"){
+      let computerChoiceImg = document.createElement("img");
+      computerChoiceImg.src = "images/rock-100x100.png";
+      document.getElementById("computer-choice-container").appendChild(computerChoiceImg);
+    }
+
+    if(playerChoice == "SCISSOR"){
+      let playerChoiceImg = document.createElement("img");
+      playerChoiceImg.src = "images/scissor-100x100.png";
+      document.getElementById("player-choice-container").appendChild(playerChoiceImg);
+    }
+
+    if(computerChoice == "SCISSOR"){
+      let playerChoiceImg = document.createElement("img");
+      playerChoiceImg.src = "images/scissor-100x100.png";
+      document.getElementById("player-choice-container").appendChild(playerChoiceImg);
+
+      if(playerChoice == "PAPER"){
+        let playerChoiceImg = document.createElement("img");
+        playerChoiceImg.src = "images/paper-100x100.png";
+        document.getElementById("player-choice-container").appendChild(playerChoiceImg);
+      }
+  
+      if(computerChoice == "PAPER"){
+        let playerChoiceImg = document.createElement("img");
+        playerChoiceImg.src = "images/paper-100x100.png";
+        document.getElementById("player-choice-container").appendChild(playerChoiceImg);
+      }
+
+
+    }
+  }
+  
