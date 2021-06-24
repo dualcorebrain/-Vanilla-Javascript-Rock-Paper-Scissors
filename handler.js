@@ -2,6 +2,11 @@
 
 //document.getElementById("rock").addEventListener("click", game);
 
+/**THINGS TO DO:
+ * Add concept of DRAW, currently in a draw computer gets the score
+ * Fix loop
+ * Fix the div moving downwards when new <img> element gets appended
+ */
 
 //game(); 
 let playerScore = 0;
@@ -211,6 +216,8 @@ function gameRound(playerSelection, computerSelection){
       document.getElementById("computer-choice-container").appendChild(computerChoiceImg);
     }
 
+
+
     if(playerChoice == "SCISSOR"){
       let playerChoiceImg = document.createElement("img");
       playerChoiceImg.src = "images/scissor-100x100.png";
@@ -220,21 +227,25 @@ function gameRound(playerSelection, computerSelection){
     if(computerChoice == "SCISSOR"){
       let playerChoiceImg = document.createElement("img");
       playerChoiceImg.src = "images/scissor-100x100.png";
-      document.getElementById("player-choice-container").appendChild(playerChoiceImg);
-
-      if(playerChoice == "PAPER"){
-        let playerChoiceImg = document.createElement("img");
-        playerChoiceImg.src = "images/paper-100x100.png";
-        document.getElementById("player-choice-container").appendChild(playerChoiceImg);
-      }
-  
-      if(computerChoice == "PAPER"){
-        let playerChoiceImg = document.createElement("img");
-        playerChoiceImg.src = "images/paper-100x100.png";
-        document.getElementById("player-choice-container").appendChild(playerChoiceImg);
-      }
-
-
+      document.getElementById("computer-choice-container").appendChild(playerChoiceImg);
     }
+
+
+
+
+    if(playerChoice == "PAPER"){
+      let playerChoiceImg = document.createElement("img");
+      playerChoiceImg.src = "images/paper-100x100.png";
+      document.getElementById("player-choice-container").appendChild(playerChoiceImg);
+    }
+
+    if(computerChoice == "PAPER"){
+      let playerChoiceImg = document.createElement("img");
+      playerChoiceImg.src = "images/paper-100x100.png";
+      document.getElementById("computer-choice-container").appendChild(playerChoiceImg);
+    }
+
+
+
   }
   
