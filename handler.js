@@ -91,9 +91,7 @@ function game(e){
     computerScore++;
   }
 
-  let consoleResult = "Player: " + playerChoice + " | Computer: " + computerChoice + " |  Current scores: Player = " + playerScore + " Computer = " + computerScore;
-
-  roundResultsAppender(consoleResult);
+  roundResultsAppender(playerScore, computerScore);
   roundImagesAppender(playerChoice, computerChoice);
 
   if(currentRound == 4){
@@ -107,6 +105,33 @@ function game(e){
   currentRound++;
 }
 
+
+
+function roundResultsAppender(playerScore, computerScore){
+  let resultElement = document.createElement("h2");
+  resultElement.id = "round-result";
+
+  let resultElementText = document.createTextNode(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
+  let resultElementTextNew = document.createTextNode(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
+
+  if(currentRound == 0){  
+    resultElement.appendChild(resultElementText);
+    document.getElementById("result-container").appendChild(resultElement);
+
+  }else{
+    let parentNode = document.getElementById("result-container");
+    let target = parentNode.children[0];
+
+    console.log(document.getElementById("result-container"));
+    target.replaceChild(resultElementTextNew, resultElementText);
+  }
+
+  /*if(currentRound == 4){
+    document.getElementById("result-container").removeChild([0]);
+  }
+  */
+  
+}
 
 
 
@@ -182,27 +207,6 @@ function gameRound(playerSelection, computerSelection){
   }
 
 
-  function roundResultsAppender(consoleResult){
-    
-    let resultElement = document.createElement("h2");
-    let resultElementText = document.createTextNode(`${consoleResult}`);
-  
-    
-    resultElement.appendChild(resultElementText);
-  
-    document.getElementById("result-container").appendChild(resultElement);
-  
-  
-    /*if(currentRound == 4){
-      document.getElementById("result-container").removeChild([0]);
-    }
-    */
-    
-  }
-  
-  function removeRoundResults(){
-  
-  }
   
   function roundImagesAppender(playerChoice, computerChoice){
     if(playerChoice == "ROCK"){
