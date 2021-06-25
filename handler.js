@@ -187,6 +187,7 @@ function gameRound(playerSelection, computerSelection){
     let resultElement = document.createElement("h2");
     let resultElementText = document.createTextNode(`${consoleResult}`);
   
+    
     resultElement.appendChild(resultElementText);
   
     document.getElementById("result-container").appendChild(resultElement);
@@ -207,6 +208,8 @@ function gameRound(playerSelection, computerSelection){
     if(playerChoice == "ROCK"){
       let playerChoiceImg = document.createElement("img");
       playerChoiceImg.src = "images/rock-100x100.png";
+      //playerChoiceImg.id = "player-image";
+
       document.getElementById("player-choice-container").appendChild(playerChoiceImg);
     }
   

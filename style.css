@@ -103,16 +103,21 @@ h2{
 
 
 /*COMPUTER CHOICES IMAGE DISPLAY*/
+#player-image{
+    position: absolute;
+}
+
 
 #player-choice-container{
     height: 700px;
-    width: 150px;
+    width: 100px;
     
-    position: relative;
+    position: fixed;
 
     
-    left: 60%;
+    left: 70%;
     bottom: 20%;
+    
 }
 
 
@@ -120,11 +125,10 @@ h2{
     height: 700px;
     width: 150px;
     
-    position: relative;
-
+    position: fixed;
     
-    left: 70%;
-    bottom: 96%;
+    left: 85%;
+    bottom: 20%;
 }
 
 
