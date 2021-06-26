@@ -87,9 +87,10 @@ function game(e){
   if(roundResult == "YOU WIN"){
     playerScore++;
   }else if(roundResult == "DRAW"){
-    
+    playerScore = playerScore;
+    computerScore = computerScore;
   }
-  else{
+  else if(roundResult == "YOU LOSE"){
     computerScore++;
   }
 
@@ -112,24 +113,22 @@ function game(e){
 function roundResultsAppender(playerScore, computerScore){
   let resultElement = document.createElement("h2");
   resultElement.id = "round-result";
+  let resultElementText = document.createTextNode(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
+  resultElement.appendChild(resultElementText);
+  document.getElementById("result-container").appendChild(resultElement);
 
-  let resultElementText;
-  let resultElementTextNew = document.createTextNode(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
 
-  if(currentRound == 0){  
-    resultElementText = document.createTextNode(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
-    resultElement.appendChild(resultElementText);
-    document.getElementById("result-container").appendChild(resultElement);
 
-  }else{
-    let parentNode = document.getElementById("result-container");
-    let target = parentNode.children[0];
+  if(currentRound > 0){
+    let target = document.getElementById("result-container");
 
-    console.log(resultElement);
-    console.log(document.getElementById("result-container"));
-    target.replaceChild(resultElementTextNew, resultElementText);
+    console.log(target);
+
+    let targetElement = target.children[0];
+    target.removeChild(targetElement);
+
+
   }
-
   /*if(currentRound == 4){
     document.getElementById("result-container").removeChild([0]);
   }
