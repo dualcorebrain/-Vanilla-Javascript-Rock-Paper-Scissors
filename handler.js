@@ -86,6 +86,8 @@ function game(e){
 
   if(roundResult == "YOU WIN"){
     playerScore++;
+  }else if(roundResult == "DRAW"){
+    
   }
   else{
     computerScore++;
@@ -111,10 +113,11 @@ function roundResultsAppender(playerScore, computerScore){
   let resultElement = document.createElement("h2");
   resultElement.id = "round-result";
 
-  let resultElementText = document.createTextNode(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
+  let resultElementText;
   let resultElementTextNew = document.createTextNode(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
 
   if(currentRound == 0){  
+    resultElementText = document.createTextNode(`Player Score: ${playerScore} | Computer Score: ${computerScore}`);
     resultElement.appendChild(resultElementText);
     document.getElementById("result-container").appendChild(resultElement);
 
@@ -122,6 +125,7 @@ function roundResultsAppender(playerScore, computerScore){
     let parentNode = document.getElementById("result-container");
     let target = parentNode.children[0];
 
+    console.log(resultElement);
     console.log(document.getElementById("result-container"));
     target.replaceChild(resultElementTextNew, resultElementText);
   }
@@ -204,6 +208,18 @@ function gameRound(playerSelection, computerSelection){
       return "YOU WIN";
     }
 
+    else if(playerSelectionUpperCase == "ROCK" && computerSelectionUpperCase == "ROCK"){
+      return "DRAW";
+    }
+
+    else if(playerSelectionUpperCase == "SCISSOR" && computerSelectionUpperCase == "SCISSOR"){
+      return "DRAW";
+
+    }
+    else if(playerSelectionUpperCase == "PAPER" && computerSelectionUpperCase == "PAPER"){
+      return "DRAW";
+
+    }
   }
 
 
