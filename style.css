@@ -103,10 +103,6 @@ h2{
 
 
 /*COMPUTER CHOICES IMAGE DISPLAY*/
-#player-image{
-    position: absolute;
-}
-
 
 #player-choice-container{
     height: 700px;
@@ -141,3 +137,24 @@ h2{
 }
 
 
+/*RESPONSIVENESS*/
+@media(max-width: 1024px){
+    #button-container{
+        top: 10%;
+    }
+    
+    #result-container{
+        top: -25%;
+        left: 250px;
+    }
+
+    #player-choice-container{
+        top: 30%;
+        left: 35%;
+    }
+
+    #computer-choice-container{
+        top: 30%;
+        left: 50%;
+    }
+}

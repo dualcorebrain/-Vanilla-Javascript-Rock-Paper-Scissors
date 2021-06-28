@@ -44,7 +44,7 @@ document.getElementById("scissor").addEventListener("mouseleave", function(e){
 //REDUCE THIS LINES OF CODE
 //https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
 document.getElementById("rock").addEventListener("click", function(e){
-  if(playerScore >=5 || computerScore >=5 || currentRound >= 5){
+  if(playerScore >=3 || computerScore >=3 ){
     return;
   }
   else{
@@ -53,7 +53,7 @@ document.getElementById("rock").addEventListener("click", function(e){
 });
 
 document.getElementById("paper").addEventListener("click", function(e){
-  if(playerScore >=5 || computerScore >=5 || currentRound >= 5){
+  if(playerScore >=3 || computerScore >=3 ){
     return;
   }
   else{
@@ -62,7 +62,7 @@ document.getElementById("paper").addEventListener("click", function(e){
 });
 
 document.getElementById("scissor").addEventListener("click", function(e){
-  if(playerScore >=5 || computerScore >=5 || currentRound >= 5){
+  if(playerScore >=3 || computerScore >=3 ){
     return;
   }
   else{
@@ -227,8 +227,6 @@ function gameRound(playerSelection, computerSelection){
     if(playerChoice == "ROCK"){
       let playerChoiceImg = document.createElement("img");
       playerChoiceImg.src = "images/rock-100x100.png";
-      //playerChoiceImg.id = "player-image";
-
       document.getElementById("player-choice-container").appendChild(playerChoiceImg);
     }
   
