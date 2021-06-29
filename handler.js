@@ -70,6 +70,12 @@ document.getElementById("scissor").addEventListener("click", function(e){
   }
 });
 
+document.getElementById("reset").addEventListener("click", function(e){
+  playerScore = 0;
+  computerScore = 0;
+  currentRound = 0;
+});
+
 
 
 
