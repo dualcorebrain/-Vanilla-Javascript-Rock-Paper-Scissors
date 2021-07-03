@@ -70,11 +70,7 @@ document.getElementById("scissor").addEventListener("click", function(e){
   }
 });
 
-document.getElementById("reset").addEventListener("click", function(e){
-  playerScore = 0;
-  computerScore = 0;
-  currentRound = 0;
-});
+document.getElementById("reset").addEventListener("click", reset);
 
 
 
@@ -229,49 +225,69 @@ function gameRound(playerSelection, computerSelection){
 
 
   
-  function roundImagesAppender(playerChoice, computerChoice){
-    if(playerChoice == "ROCK"){
-      let playerChoiceImg = document.createElement("img");
-      playerChoiceImg.src = "images/rock-100x100.png";
-      document.getElementById("player-choice-container").appendChild(playerChoiceImg);
-    }
-  
-    if(computerChoice == "ROCK"){
-      let computerChoiceImg = document.createElement("img");
-      computerChoiceImg.src = "images/rock-100x100.png";
-      document.getElementById("computer-choice-container").appendChild(computerChoiceImg);
-    }
-
-
-
-    if(playerChoice == "SCISSOR"){
-      let playerChoiceImg = document.createElement("img");
-      playerChoiceImg.src = "images/scissor-100x100.png";
-      document.getElementById("player-choice-container").appendChild(playerChoiceImg);
-    }
-
-    if(computerChoice == "SCISSOR"){
-      let playerChoiceImg = document.createElement("img");
-      playerChoiceImg.src = "images/scissor-100x100.png";
-      document.getElementById("computer-choice-container").appendChild(playerChoiceImg);
-    }
-
-
-
-
-    if(playerChoice == "PAPER"){
-      let playerChoiceImg = document.createElement("img");
-      playerChoiceImg.src = "images/paper-100x100.png";
-      document.getElementById("player-choice-container").appendChild(playerChoiceImg);
-    }
-
-    if(computerChoice == "PAPER"){
-      let playerChoiceImg = document.createElement("img");
-      playerChoiceImg.src = "images/paper-100x100.png";
-      document.getElementById("computer-choice-container").appendChild(playerChoiceImg);
-    }
-
-
-
+function roundImagesAppender(playerChoice, computerChoice){
+  if(playerChoice == "ROCK"){
+    let playerChoiceImg = document.createElement("img");
+    playerChoiceImg.src = "images/rock-100x100.png";
+    playerChoiceImg.className = "appended-image";
+    document.getElementById("player-choice-container").appendChild(playerChoiceImg);
   }
+
+  if(computerChoice == "ROCK"){
+    let computerChoiceImg = document.createElement("img");
+    computerChoiceImg.src = "images/rock-100x100.png";
+    computerChoiceImg.className = "appended-image";
+    document.getElementById("computer-choice-container").appendChild(computerChoiceImg);
+  }
+
+
+
+  if(playerChoice == "SCISSOR"){
+    let playerChoiceImg = document.createElement("img");
+    playerChoiceImg.src = "images/scissor-100x100.png";
+    playerChoiceImg.className = "appended-image";
+    document.getElementById("player-choice-container").appendChild(playerChoiceImg);
+  }
+
+  if(computerChoice == "SCISSOR"){
+    let computerChoiceImg = document.createElement("img");
+    computerChoiceImg.src = "images/scissor-100x100.png";
+    computerChoiceImg.className = "appended-image";
+    document.getElementById("computer-choice-container").appendChild(computerChoiceImg);
+  }
+
+
+
+
+  if(playerChoice == "PAPER"){
+    let playerChoiceImg = document.createElement("img");
+    playerChoiceImg.src = "images/paper-100x100.png";
+    playerChoiceImg.className = "appended-image";
+    document.getElementById("player-choice-container").appendChild(playerChoiceImg);
+  }
+
+  if(computerChoice == "PAPER"){
+    let computerChoiceImg = document.createElement("img");
+    computerChoiceImg.src = "images/paper-100x100.png";
+    computerChoiceImg.className = "appended-image";
+    document.getElementById("computer-choice-container").appendChild(computerChoiceImg);
+  }
+
+
+
+}
+
+
+function reset(e){
+  playerScore = 0;
+  computerScore = 0;
+  currentRound = 0;
+
+  let playerChoiceContainerTarget = document.getElementById("player-choice-container");
+  let elementToBeRemoved = playerChoiceContainerTarget.children[0];
+
+  playerChoiceContainerTarget.removeChild(elementToBeRemoved);
+
+
   
+}
