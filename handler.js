@@ -284,10 +284,24 @@ function reset(e){
   currentRound = 0;
 
   let playerChoiceContainerTarget = document.getElementById("player-choice-container");
-  let elementToBeRemoved = playerChoiceContainerTarget.children[0];
+  //In javacript length of the Object type arrays dynamically changes when elements are removed! 
+  while(playerChoiceContainerTarget.children.length > 0){
+    let playerElementToBeRemoved = playerChoiceContainerTarget.children[0];
+    playerChoiceContainerTarget.removeChild(playerElementToBeRemoved);
+  }
 
-  playerChoiceContainerTarget.removeChild(elementToBeRemoved);
+
+  let computerChoiceContainerTarget = document.getElementById("computer-choice-container");
+  while(computerChoiceContainerTarget.children.length > 0){
+    let computerElementToBeRemoved = computerChoiceContainerTarget.children[0];
+    computerChoiceContainerTarget.removeChild(computerElementToBeRemoved);
+  }
 
 
-  
+  let resultContainerTarget = document.getElementById("result-container");
+  let resultToBeRemoved = resultContainerTarget.children[0];
+
+  resultContainerTarget.removeChild(resultToBeRemoved);
+
+
 }
