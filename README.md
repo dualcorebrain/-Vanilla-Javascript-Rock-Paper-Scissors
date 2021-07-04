@@ -4,6 +4,8 @@
 
 <h4>Things to do</h4>
 <ul>
-<li>Add a counter until 5 rounds</li>
+<li>Even with counter at 3 rounds prevent overflowing to the bottom of the page</li>
 <li>Sort out styling</li>
+<li>Add custom made images</li>
+
 </ul>
