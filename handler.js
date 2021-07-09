@@ -44,7 +44,7 @@ document.getElementById("scissor").addEventListener("mouseleave", function(e){
 //REDUCE THIS LINES OF CODE
 //https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
 document.getElementById("rock").addEventListener("click", function(e){
-  if(playerScore >=3 || computerScore >=3 ){
+  if(playerScore >=5 || computerScore >=5 ){
     return;
   }
   else{
@@ -53,7 +53,7 @@ document.getElementById("rock").addEventListener("click", function(e){
 });
 
 document.getElementById("paper").addEventListener("click", function(e){
-  if(playerScore >=3 || computerScore >=3 ){
+  if(playerScore >=5 || computerScore >=5 ){
     return;
   }
   else{
@@ -62,7 +62,7 @@ document.getElementById("paper").addEventListener("click", function(e){
 });
 
 document.getElementById("scissor").addEventListener("click", function(e){
-  if(playerScore >=3 || computerScore >=3 ){
+  if(playerScore >=5 || computerScore >=5 ){
     return;
   }
   else{

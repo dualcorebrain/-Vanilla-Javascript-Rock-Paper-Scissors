@@ -11,7 +11,7 @@ body{
 
 #button-container{
     position: relative;
-    top: 45%;
+    top: 15%;
     left: 20%;
 
     height: 15%;
@@ -103,36 +103,42 @@ h2{
 
 
 /*COMPUTER CHOICES IMAGE DISPLAY*/
+#round-images-container{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    column-gap: 10%;
+    row-gap: 5%;
+
+    position: relative;
+    bottom: 30%;
+    left: 70%;
+    width: 200px;
+}
+
 
 #player-choice-container{
-    height: 700px;
-    width: 100px;
-    
-    position: fixed;
 
-    
-    left: 70%;
-    bottom: 20%;
-    
+    border: 1px solid yellow;
+    border-radius: 10px;
+
 }
 
 
 #computer-choice-container{
-    height: 700px;
-    width: 150px;
+
+
+    border: 1px solid red;
+    border-radius: 10px;
+
     
-    position: fixed;
-    
-    left: 85%;
-    bottom: 20%;
 }
 
 
 /*ROUND RESULTS*/
 #result-container{
     position: relative;
-    top: 40%;
-    left: 10%;
+    top: 0%;
+    left: 25%;
     max-width: max-content;                                                                                                                                                          ;
 }
 
