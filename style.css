@@ -44,6 +44,7 @@ body{
 }
 
 #rest-button-container{
+    width: max-content;
     position: relative;
     left: 5%;
     bottom: 7%;
@@ -62,7 +63,7 @@ body{
     display: flex;
 }
 
-
+/*WHEN MOUSE ENTERS BUTTON REGION THE THE ROCK/PAPER/SCISSOR IMAGE GETS SHOWN BY CHANGING VISIBILITY AND CLASS*/
 
 .images{
      visibility: hidden;
@@ -93,6 +94,7 @@ h2, h3{
     bottom: 30%;
     left: 70%;
     width: 200px;
+    margin: 0;
 }
 
 
@@ -158,9 +160,32 @@ h2, h3{
 
     #results-title-container{
         top: 8%;
-        left: 35%;
+        left: 36%;
     }
     
 
+}
+
+@media(max-width: 400px){
+    #button-container{
+        height: 45%;
+        width: 80%;
+        justify-content: space-around;
+    }
+
+    #hover-images-container{
+        left: -10%;
+    }
+
+    #rest-button-container{
+        bottom: 45%;
+        left: 40%;
+    }
+
+    
+    #result-container{
+        top: 5%;
+        left: 5%;
+    }
 }
 

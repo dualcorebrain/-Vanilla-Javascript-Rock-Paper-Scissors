@@ -3,9 +3,6 @@
 //document.getElementById("rock").addEventListener("click", game);
 
 /**THINGS TO DO:
- * Add concept of DRAW, currently in a draw computer gets the score
- * Fix loop
- * Fix the div moving downwards when new <img> element gets appended
  */
 
 //game(); 
